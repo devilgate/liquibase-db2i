@@ -38,4 +38,12 @@ public class DB2iDatabase extends DB2Database {
     public boolean supportsSchemas() {
         return true;
     }
+    
+    @Override
+    /** 
+     * This is true for DB2 LUW, but not DB2 for the iSeries.
+     */
+    public boolean supportsTablespaces() {
+    	return false;
+    }
 }
