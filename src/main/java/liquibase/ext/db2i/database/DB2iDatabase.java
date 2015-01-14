@@ -3,6 +3,8 @@ package liquibase.ext.db2i.database;
 import liquibase.database.DatabaseConnection;
 import liquibase.database.core.DB2Database;
 import liquibase.exception.DatabaseException;
+import liquibase.ext.db2i.limits.LengthLimiter;
+import liquibase.ext.db2i.limits.LengthLimiter.Length;
 
 public class DB2iDatabase extends DB2Database {
 
@@ -46,4 +48,18 @@ public class DB2iDatabase extends DB2Database {
     public boolean supportsTablespaces() {
     	return false;
     }
+    
+    /**
+     * Extends the {@link escapeStringForDatabase} method to also truncate the
+     * String to a System i-specific limit.
+     * 
+     * @param input
+     * @param length
+     * @return
+     */
+    public String escapeAndTruncate(String input, Length length) {
+    	LengthLimiter limiter = new LengthLimiter();
+    	return escapeStringForDatabase(limiter.truncate(input, length));
+    }
+    
 }
