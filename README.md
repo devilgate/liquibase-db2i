@@ -6,7 +6,7 @@ There are a few subtleties, however, that make DB2 for i (let's call it that for
 
 # Installing the extension
 
-The core Liquibase documentation is curiously weak on how to install and use extensions. Luckily there is a good description on [how to get, build and use this very extension in this blog post](http://blog.awolski.com/installing-liquibase-extensions/) by "awolkski".
+The core Liquibase documentation is curiously weak on how to install and use extensions. Luckily there is a good description on [how to get, build and use this very extension in this blog post](http://blog.awolski.com/installing-liquibase-extensions/) by "awolski".
 
 # Particluars
 
