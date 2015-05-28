@@ -41,7 +41,7 @@ public class LengthLimiter {
 	 */
 	public String truncate(String input, Length length) {
 		if (input.length() > length.getLength()) {
-			return input.substring(0, length.getLength() -3 ) + ELLIPSIS;
+			return input.substring(0, length.getLength() - 3) + ELLIPSIS;
 		}
 		else {
 			return input;

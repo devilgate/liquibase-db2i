@@ -62,4 +62,13 @@ public class DB2iDatabase extends DB2Database {
     	return escapeStringForDatabase(limiter.truncate(input, length));
     }
     
+    @Override
+    /* No it doesn't, even if DB2 LUW does. But something has changed on 
+     * the i, because we're getting an error that this should fix.
+     */
+    public boolean jdbcCallsCatalogsSchemas() {
+        return false;
+    }
+
+    
 }
